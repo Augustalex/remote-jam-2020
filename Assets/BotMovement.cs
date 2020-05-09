@@ -34,7 +34,6 @@ public class BotMovement : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-	    Debug.Log("COLLISION!");
         direction = new Vector3(Random.Range(-10.0f, 10.0f), 0, Random.Range(-10.0f, 10.0f));
     	_rigidbody.AddForce(direction * thrust);
     }
