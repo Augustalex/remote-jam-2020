@@ -75,5 +75,9 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4c4dbb28eaed90148bfc6fe1122d8438, type: 2}
+    - target: {fileID: 3564679081037451748, guid: d0593fb4092123086bc3abd022238354, type: 3}
+      propertyPath: Text
+      value: Player Two
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0593fb4092123086bc3abd022238354, type: 3}
