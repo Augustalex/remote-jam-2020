@@ -3,39 +3,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Users;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public int PlayerOrder = 0;
-    
-    private const float MovementSpeed = 6;
-    private PlayerInputActions _inputActions;
+    private const float MovementSpeed = 26;
     private Vector2 _direction;
+
+    [SerializeField] private InputAction movePlayer;
+    
     void Awake()
     {
-        Debug.Log("AWAKE!");
-        _inputActions = new PlayerInputActions();
-        _inputActions.Player.Movement.performed += Move;
+        movePlayer.performed += Move;
+        movePlayer.canceled += _ => _direction = Vector2.zero;
     }
 
     private void OnEnable()
     {
-        _inputActions.Player.Enable();
+        movePlayer.Enable();
     }
 
     private void OnDisable()
     {
-        _inputActions.Player.Disable();
+        movePlayer.Disable();
     }
 
     private void FixedUpdate()
     {
-        transform.position += new Vector3(_direction.x * MovementSpeed * Time.deltaTime, 0, _direction.y * MovementSpeed * Time.deltaTime);
+        var rigidbody = GetComponentInChildren<Rigidbody>();
+        var forceVector = new Vector3(_direction.x * MovementSpeed * Time.deltaTime, 0, _direction.y * MovementSpeed * Time.deltaTime);
+        rigidbody.AddForce(forceVector, ForceMode.VelocityChange);
     }
 
     public void Move(InputAction.CallbackContext ctx)
     {
-        Debug.Log("MOVE");
         _direction = ctx.ReadValue<Vector2>();
     }
 }
