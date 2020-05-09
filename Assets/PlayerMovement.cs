@@ -6,7 +6,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    public int PlayerOrder = 0;
+    
     private const float MovementSpeed = 6;
     private PlayerInputActions _inputActions;
     private Vector2 _direction;
