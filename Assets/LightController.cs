@@ -6,8 +6,8 @@ public class LightController : MonoBehaviour
     private readonly float _startTime = Time.time;
     public Light[] lights;
 
-    private const float EndOfReallyTenseTime = 5;
-    private const float EndOfSomewhatTenseTime = 9;
+    private const float EndOfReallyTenseTime = 4;
+    private const float EndOfSomewhatTenseTime = 12;
 
     void Update()
     {
