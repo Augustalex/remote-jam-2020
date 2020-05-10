@@ -7,16 +7,27 @@ public class BotSpawner : MonoBehaviour
 {
     public GameObject BotTemplate;
     private GameConfig _gameConfig;
+    private int _spawnCount = 0;
 
-
-    // Start is called before the first frame update
-    void Awake()
+    async void Awake()
     {
         _gameConfig = GameObject.FindGameObjectWithTag("GameConfig").GetComponent<GameConfig>();
 
-        for (var i = 0; i < _gameConfig.difficultyLevel; i++)
+        Invoke("Spawn", NextDelay());
+    }
+
+    private void Spawn()
+    {
+        Instantiate(BotTemplate, transform.position, transform.rotation);
+        _spawnCount++;
+        if (_spawnCount <= _gameConfig.difficultyLevel)
         {
-            Instantiate(BotTemplate, transform.position, transform.rotation);
+            Invoke("Spawn", NextDelay());
         }
     }
+
+    public float NextDelay()
+    {
+        return Random.value * 5f;
+    } 
 }
