@@ -8,6 +8,7 @@ TagManager:
   - Timer
   - GameOverWatcher
   - GameConfig
+  - TryAgainButton
   layers:
   - Default
   - TransparentFX

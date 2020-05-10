@@ -44,7 +44,14 @@ namespace DefaultNamespace
                 {
                     _tie = true;
                 }
+
+                GetTryAgainButton().Show();
             }
+        }
+     
+        public TryAgainButton GetTryAgainButton()
+        {
+            return GameObject.FindGameObjectWithTag("TryAgainButton").GetComponent<TryAgainButton>();
         }
     }
 }
