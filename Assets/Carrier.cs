@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class Carrier : MonoBehaviour
@@ -18,14 +15,15 @@ public class Carrier : MonoBehaviour
     {
         if (Infected)
         {
-           _renderer.materials[0].color = Color.red;
+            _renderer.materials[0].color = Color.red;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         var carrier = other.GetComponentInParent<Carrier>();
-        if (carrier && carrier.Infected)
+        var chance = other.CompareTag("Player") || Random.value < .4;
+        if (carrier && carrier.Infected && chance)
         {
             Infected = true;
         }
