@@ -25,6 +25,11 @@ namespace DefaultNamespace
             }
         }
 
+        public bool GameIsOver()
+        {
+            return _winner || _tie;
+        }
+
         private void checkForNewWinner()
         {
             var players = GameObject.FindGameObjectsWithTag("Player");

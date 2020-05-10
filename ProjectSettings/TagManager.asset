@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GameOverText
   - Timer
+  - GameOverWatcher
   layers:
   - Default
   - TransparentFX

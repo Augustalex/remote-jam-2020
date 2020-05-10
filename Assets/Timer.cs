@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    private double _startTime = Time.time;
+    private double _time = 0;
     private Text _text;
 
     // Update is called once per frame
@@ -17,6 +18,15 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        _text.text = "You've survived for " + Math.Truncate(Time.time - _startTime) + " seconds";
+        var gameOverWatcher = GameObject.FindGameObjectWithTag("GameOverWatcher").GetComponent<GameOverTextEditor>();
+        if (gameOverWatcher.GameIsOver())
+        {
+            _text.text = "You survived for " + Math.Truncate(_time) + " seconds";
+        }
+        else
+        {
+            _time += Time.deltaTime;
+            _text.text = "You've survived for " + Math.Truncate(_time) + " seconds";
+        }
     }
 }
