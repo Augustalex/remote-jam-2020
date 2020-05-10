@@ -14,7 +14,6 @@ namespace DefaultNamespace
 
         void Update()
         {
-            Debug.Log("_carrier.Infected: " + _carrier.Infected);
             if (_carrier.Infected)
             {
                 GameOver = true;
