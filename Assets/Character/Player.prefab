@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93d6bcd4b73542ecb4cdb87505eabd5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: Player One
+  Text: Orange Player
 --- !u!54 &3965308756898425651
 Rigidbody:
   m_ObjectHideFlags: 0
