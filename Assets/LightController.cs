@@ -3,8 +3,11 @@ using Random = UnityEngine.Random;
 
 public class LightController : MonoBehaviour
 {
-    private float _startTime = Time.time;
+    private readonly float _startTime = Time.time;
     public Light[] lights;
+
+    private const float EndOfReallyTenseTime = 5;
+    private const float EndOfSomewhatTenseTime = 9;
 
     void Update()
     {
@@ -49,11 +52,11 @@ public class LightController : MonoBehaviour
     }
     public float ChanceForLightsToTurnOn()
     {
-        if (Duration() < 5)
+        if (Duration() < EndOfReallyTenseTime)
         {
             return .0002f;
         }
-        else if (Duration() < 10)
+        else if (Duration() < EndOfSomewhatTenseTime)
         {
             return .0004f;
         }
