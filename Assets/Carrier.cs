@@ -19,10 +19,10 @@ public class Carrier : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         var carrier = other.GetComponentInParent<Carrier>();
-        var chance = other.CompareTag("Player") || Random.value < .4;
+        var chance = other.CompareTag("Player") || Random.value < .15f;
         if (carrier && carrier.Infected && chance)
         {
             Infected = true;

@@ -23,6 +23,10 @@ PrefabInstance:
       propertyPath: movePlayer.m_SingletonActionBindings.Array.data[4].m_Path
       value: <Keyboard>/rightArrow
       objectReference: {fileID: 0}
+    - target: {fileID: 2634865612979053008, guid: d0593fb4092123086bc3abd022238354, type: 3}
+      propertyPath: jump.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Keyboard>/ctrl
+      objectReference: {fileID: 0}
     - target: {fileID: 2634865612979053011, guid: d0593fb4092123086bc3abd022238354, type: 3}
       propertyPath: m_Name
       value: Player 2 Variant

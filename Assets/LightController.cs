@@ -3,12 +3,17 @@ using Random = UnityEngine.Random;
 
 public class LightController : MonoBehaviour
 {
-    private readonly float _startTime = Time.time;
+    private float _startTime;
     public Light[] lights;
 
     private const float EndOfReallyTenseTime = 4;
     private const float EndOfSomewhatTenseTime = 12;
 
+    void Awake()
+    {
+        _startTime = Time.time;
+    }
+    
     void Update()
     {
         foreach (var lightComponent in lights)

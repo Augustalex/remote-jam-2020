@@ -52,7 +52,7 @@ public class BotMovement : MonoBehaviour
     {
 	    if (_carrier.Infected)
 	    {
-		    return .7f;
+		    return .9f;
 	    }
 	    else
 	    {

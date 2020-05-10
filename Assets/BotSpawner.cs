@@ -9,7 +9,7 @@ public class BotSpawner : MonoBehaviour
     private GameConfig _gameConfig;
     private int _spawnCount = 0;
 
-    async void Awake()
+    void Awake()
     {
         _gameConfig = GameObject.FindGameObjectWithTag("GameConfig").GetComponent<GameConfig>();
 

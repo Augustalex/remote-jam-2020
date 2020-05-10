@@ -43,4 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3dd5f57922a2004c8b0f80a401845a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficultyLevel: 5
+  difficultyLevel: 9

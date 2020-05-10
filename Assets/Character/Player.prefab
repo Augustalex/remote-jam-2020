@@ -144,6 +144,22 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Move Player
       m_Flags: 8
+  jump:
+    m_Name: Jump
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: fb2d04b8-8dfc-4e7f-9913-cdb54136dba9
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: e0661de2-a217-4b05-8d3d-244f7f80d06b
+      m_Path: <Keyboard>/q
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Jump
+      m_Flags: 0
 --- !u!114 &4618682763727230795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,7 +206,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2634865612979053011}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 4
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
